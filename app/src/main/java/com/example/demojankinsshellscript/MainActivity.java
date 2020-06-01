@@ -12,5 +12,8 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        String currentDirectory = System.getProperty("user.dir");
+        System.out.println("user.dir: " + currentDirectory);
     }
 }
