@@ -17,15 +17,15 @@ then
   echo "Device not found"
   exit
 fi
-#Install MaaS360 Test Apk and  Normal MaaS360 Apk in device.
+#Install app-debug Test Apk and  Normal app-debug Apk in device.
   userWorkingdDir=$(pwd)
   echo "User Working Directory is:-"$userWorkingdDir
-  maas360TestApk=$userWorkingdDir/ShellScriptDemoForInstrumentation/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
-  echo "Test Apk " + $maas360TestApk
-  maaS360NormalApk=$userWorkingdDir/workspace/ShellScriptDemoForInstrumentation/app/build/outputs/apk/debug/app-debug.apk
-  echo "Normal Apk" + $maaS360NormalApk
-  echo "Installing MaaS360DLP Application....." $(adb install $maaS360NormalApk)
-  echo "Installing MaaS360DLP Test Application....." $(adb install $maas360TestApk)
+  debugTestApk=$userWorkingdDir/ShellScriptDemoForInstrumentation/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+  echo "Test Apk " + $debugTestApk
+  appDebugNormalApk=$userWorkingdDir/workspace/ShellScriptDemoForInstrumentation/app/build/outputs/apk/debug/app-debug.apk
+  echo "Normal Apk" + $appDebugNormalApk
+  echo "Installing app-debug Application....." $(adb install $appDebugNormalApk)
+  echo "Installing app-debug-androidTest Test Application....." $(adb install $debugTestApk)
 #Find list of active users on Device
 activeUsersOnDevice=$(adb shell pm list users)
 echo "Active Users Details:" $(adb shell pm list users)
